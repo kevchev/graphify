@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Generac Guardian 18kW — El Niño Winter — Gardenland</title>
+<style>
+@font-face{font-family:'BC';font-weight:600;src:url(../assets/fonts/BarlowCondensed-600.woff2) format('woff2')}
+@font-face{font-family:'BC';font-weight:700;src:url(../assets/fonts/BarlowCondensed-700.woff2) format('woff2')}
+@font-face{font-family:'BC';font-weight:800;src:url(../assets/fonts/BarlowCondensed-800.woff2) format('woff2')}
+@font-face{font-family:'BC';font-weight:900;src:url(../assets/fonts/BarlowCondensed-900.woff2) format('woff2')}
+@font-face{font-family:'B';font-weight:500;src:url(../assets/fonts/Barlow-500.woff2) format('woff2')}
+@font-face{font-family:'B';font-weight:600;src:url(../assets/fonts/Barlow-600.woff2) format('woff2')}
+@font-face{font-family:'B';font-weight:700;src:url(../assets/fonts/Barlow-700.woff2) format('woff2')}
+@font-face{font-family:'L';font-weight:400;src:url(../assets/fonts/Lato-Regular.ttf) format('truetype')}
+@font-face{font-family:'L';font-weight:700;src:url(../assets/fonts/Lato-Bold.ttf) format('truetype')}
+:root{--bg:#0e1216;--green:#55b948;--lime:#7ddc6a;--ink:#121212;--studio:#f1f2f0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+body{font-family:'B',sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--bg)}
+.scene{position:absolute;inset:0;display:none;overflow:hidden;background:var(--bg)}
+.scene.light{background:radial-gradient(ellipse 75% 65% at 60% 55%,#ffffff 0%,#f1f2f0 50%,#dcdedb 100%)}
+.abs{position:absolute}
+.plate{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:50% 50%}
+.rainwrap{position:absolute;left:0;top:0;width:1920px;height:1080px;overflow:hidden;pointer-events:none}
+.rain{position:absolute;left:0;top:-2160px;width:1920px;height:4320px;background-repeat:repeat-y;background-size:1920px 2160px}
+.flash{position:absolute;inset:0;background:#dfe9ff;opacity:0;mix-blend-mode:screen}
+.ghost{position:absolute;font-family:'BC';font-weight:900;font-size:430px;line-height:1;letter-spacing:-.01em;color:rgba(255,255,255,.055);text-transform:uppercase;white-space:nowrap}
+.ln{overflow:hidden;position:absolute;padding:0 0 .12em 0}
+.ln>span{display:block;transform:translateY(110%)}
+.h1{font-family:'BC';font-weight:800;text-transform:uppercase;line-height:.92;letter-spacing:.005em;white-space:nowrap}
+.kicker{font-family:'L';font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:24px;color:var(--green)}
+.label{font-family:'L';font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:22px;color:rgba(255,255,255,.72)}
+.light .label{color:#5a5f5c}
+.light .h1{color:var(--ink)}
+.num{font-family:'BC';font-weight:900;line-height:.85;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.chip{display:flex;align-items:center;font-family:'B';font-weight:600;font-size:36px;color:var(--ink);text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
+.chip .ck{width:50px;height:50px;border-radius:50%;background:var(--green);display:inline-flex;align-items:center;justify-content:center;margin-right:22px;flex:none}
+.chip .ck svg{width:28px;height:28px}
+.floor{position:absolute;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,0,0,.28) 0%,rgba(0,0,0,.12) 40%,rgba(0,0,0,0) 72%)}
+.pill{display:inline-block;padding:20px 46px;border-radius:999px;background:var(--green);color:#0b0f0c;font-family:'BC';font-weight:800;font-size:40px;letter-spacing:.05em;text-transform:uppercase;white-space:nowrap}
+.fine{font-family:'L';font-weight:400;font-size:18px;line-height:1.35;color:rgba(255,255,255,.5)}
+#wipeline{position:absolute;z-index:5;top:-10%;height:120%;width:10px;background:var(--green);box-shadow:0 0 28px 6px rgba(85,185,72,.55);transform:skewX(-9deg);display:none}
+#fade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+/* phone */
+.phone{position:absolute;width:400px;height:820px;border-radius:58px;background:#0b0d10;box-shadow:0 40px 80px rgba(0,0,0,.28),inset 0 0 0 3px #2a2e33}
+.phone .screen{position:absolute;left:14px;top:14px;right:14px;bottom:14px;border-radius:46px;background:#fafafa;overflow:hidden}
+.phone .notch{position:absolute;left:50%;top:24px;width:120px;height:34px;margin-left:-60px;border-radius:20px;background:#0b0d10}
+.phone .sb{position:absolute;left:30px;right:30px;top:22px;display:flex;justify-content:space-between;font-family:'L';font-weight:700;font-size:16px;color:#111}
+.phone .brand{position:absolute;left:0;right:0;top:84px;text-align:center;font-family:'B';font-weight:700;font-size:30px;letter-spacing:.02em;color:#1b2a4a}
+.phone .brand i{display:block;width:118px;height:6px;margin:4px auto 0;background:#e8762b;border-radius:2px;transform:skewX(-20deg)}
+.phone .card{position:absolute;left:22px;right:22px;top:160px;border-radius:18px;background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.10);border:2px solid var(--green);padding:22px 22px 20px 22px}
+.phone .st{font-family:'L';font-weight:700;font-size:21px;color:#111;line-height:1.2}
+.phone .sub{font-family:'L';font-weight:400;font-size:15px;color:#666;margin-top:8px}
+.phone .row{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding-top:14px;border-top:1px solid #eee;font-family:'L';font-weight:400;font-size:15px;color:#333}
+.phone .row b{font-weight:700;color:#111}
+.phone .dot{position:absolute;right:20px;top:20px;width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center}
+.phone .ring{position:absolute;right:8px;top:8px;width:64px;height:64px;border-radius:50%;border:3px solid var(--green);opacity:0}
+.phone .tile{position:absolute;left:22px;right:22px;border-radius:16px;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.06);padding:16px 20px;font-family:'L';font-size:15px;color:#333}
+.phone .tile b{display:block;font-weight:700;color:#111;font-size:16px;margin-bottom:4px}
+.bar{position:absolute;height:12px;background:var(--green);border-radius:6px}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- STORM: open + fact -->
+<section id="STORM" class="scene">
+  <img id="ST_bg" class="plate" src="../assets/img/bg-storm.jpg">
+  <div class="rainwrap"><div id="ST_rf" class="rain" style="background-image:url(../assets/img/rain_far.png);opacity:.28"></div><div id="ST_rn" class="rain" style="background-image:url(../assets/img/rain_near.png);opacity:.32"></div></div>
+  <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(14,18,22,.92) 0%,rgba(14,18,22,.72) 45%,rgba(14,18,22,.15) 100%)"></div>
+  <div class="abs" style="inset:0;background:linear-gradient(0deg,rgba(14,18,22,.9) 0%,rgba(14,18,22,.35) 45%,rgba(14,18,22,0) 100%)"></div>
+  <div id="ST_ghost" class="ghost" style="left:40px;top:-10px">El Niño</div>
+  <div id="ST_flash" class="flash"></div>
+  <!-- open -->
+  <div id="O_g" class="abs" style="left:96px;top:400px;width:1100px">
+    <div class="ln" style="left:0;top:0"><span id="O_l1" class="h1" style="font-size:132px">This winter is not</span></div>
+    <div class="ln" style="left:0;top:132px"><span id="O_l2" class="h1" style="font-size:132px">a normal winter.</span></div>
+  </div>
+  <!-- fact -->
+  <div id="F_g" class="abs" style="left:96px;top:150px;width:1500px">
+    <div class="num" style="font-size:330px;color:var(--green)"><span id="F_n">0</span>%</div>
+    <div class="abs" style="left:0;top:320px;width:900px;height:12px;background:rgba(255,255,255,.14);border-radius:6px"></div>
+    <div id="F_bar" class="bar" style="left:0;top:320px;width:0"></div>
+    <div class="ln" style="left:0;top:372px"><span id="F_l1" class="h1" style="font-size:92px">A strong-to-very strong El Niño</span></div>
+    <div class="ln" style="left:0;top:472px"><span id="F_l2" class="h1" style="font-size:92px">is likely through March 2027.</span></div>
+    <div id="F_src" class="label abs" style="left:0;top:610px">NOAA Climate Prediction Center · Oct 2026 · 83% chance</div>
+  </div>
+</section>
+
+<!-- DARK: the problem -->
+<section id="DARK" class="scene">
+  <img id="D_bg" class="plate" src="../assets/img/bg-dark.jpg">
+  <div class="rainwrap"><div id="D_rf" class="rain" style="background-image:url(../assets/img/rain_far.png);opacity:.26"></div><div id="D_rn" class="rain" style="background-image:url(../assets/img/rain_near.png);opacity:.3"></div></div>
+  <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(14,18,22,.9) 0%,rgba(14,18,22,.6) 50%,rgba(14,18,22,.1) 100%)"></div>
+  <div class="abs" style="inset:0;background:linear-gradient(0deg,rgba(14,18,22,.85) 0%,rgba(14,18,22,.2) 50%,rgba(14,18,22,0) 100%)"></div>
+  <div id="D_vig" class="abs" style="inset:0;background:radial-gradient(ellipse 60% 60% at 30% 50%,rgba(0,0,0,0) 0%,rgba(0,0,0,.92) 100%);opacity:0"></div>
+  <div id="D_flash" class="flash"></div>
+  <div class="ln" style="left:96px;top:300px"><span id="D_l1" class="h1" style="font-size:132px">Storms.</span></div>
+  <div class="ln" style="left:96px;top:440px"><span id="D_l2" class="h1" style="font-size:132px">Downed lines.</span></div>
+  <div class="ln" style="left:96px;top:580px"><span id="D_l3" class="h1" style="font-size:132px">Days in the dark.</span></div>
+</section>
+
+<!-- HOUSE: the turn -->
+<section id="HOUSE" class="scene">
+  <img id="H_dark" class="plate" src="../assets/img/house_dark.jpg">
+  <img id="H_lit" class="plate" src="../assets/img/bg-lit.jpg" style="opacity:0">
+  <img id="H_glow" class="plate" src="../assets/img/house_glow.png" style="opacity:0;mix-blend-mode:screen">
+  <div class="rainwrap"><div id="H_rf" class="rain" style="background-image:url(../assets/img/rain_far.png);opacity:.2"></div><div id="H_rn" class="rain" style="background-image:url(../assets/img/rain_near.png);opacity:.22"></div></div>
+  <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(14,18,22,.9) 0%,rgba(14,18,22,.62) 38%,rgba(14,18,22,.05) 70%)"></div>
+  <div class="abs" style="inset:0;background:linear-gradient(0deg,rgba(14,18,22,.8) 0%,rgba(14,18,22,.1) 45%,rgba(14,18,22,0) 100%)"></div>
+  <div class="ln" style="left:96px;top:300px"><span id="H_l1" class="h1" style="font-size:132px">Or your lights</span></div>
+  <div class="ln" style="left:96px;top:440px"><span id="H_l2" class="h1" style="font-size:132px">come back on.</span></div>
+  <div id="H_l3" class="h1 abs" style="left:96px;top:586px;font-size:132px;color:var(--green);transform-origin:0 50%;opacity:0">Automatically.</div>
+</section>
+
+<!-- PRODUCT -->
+<section id="PROD" class="scene light">
+  <div id="P_floor" class="floor" style="left:880px;top:900px;width:1000px;height:120px"></div>
+  <div id="P_wrap" class="abs" style="left:860px;top:230px;width:1000px;height:711px;perspective:1800px">
+    <img id="P_img" src="../assets/img/generac-7228.png" style="position:absolute;left:0;top:0;width:1000px;height:711px;transform-origin:50% 50%">
+    <div id="P_sweep" class="abs" style="left:0;top:0;width:1000px;height:711px;-webkit-mask-image:url(../assets/img/generac-7228.png);-webkit-mask-size:1000px 711px;mask-image:url(../assets/img/generac-7228.png);mask-size:1000px 711px;background:linear-gradient(100deg,rgba(255,255,255,0) 40%,rgba(255,255,255,.75) 50%,rgba(255,255,255,0) 60%);background-size:300% 100%;background-position:120% 0;mix-blend-mode:screen"></div>
+  </div>
+  <div id="P_k" class="kicker abs" style="left:96px;top:250px;color:#3f8a35">Model 7228 · Home standby generator</div>
+  <div class="ln" style="left:96px;top:296px"><span id="P_l1" class="h1" style="font-size:110px">Generac Guardian<sup style="font-size:40px;vertical-align:top;line-height:1;margin-left:6px">®</sup></span></div>
+  <div class="ln" style="left:96px;top:412px"><span id="P_l2" class="num" style="font-size:200px;color:var(--ink)">18<span style="font-size:120px;color:#3f8a35;margin-left:6px">kW</span></span></div>
+  <div id="P_c1" class="chip abs" style="left:96px;top:660px"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0f0c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></span>Up to whole-house coverage</div>
+  <div id="P_c2" class="chip abs" style="left:96px;top:740px"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0f0c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></span>Free Mobile Link™ monitoring</div>
+  <div id="P_c3" class="chip abs" style="left:96px;top:820px"><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="#0b0f0c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></span>5-year limited warranty</div>
+</section>
+
+<!-- PROOF: phone -->
+<section id="PROOF" class="scene light">
+  <div id="Q_phone" class="phone" style="left:300px;top:150px">
+    <div class="screen">
+      <div class="sb"><span>9:41</span><span>▮▮▮ ᯤ 95%</span></div>
+      <div class="brand">GENERAC<i></i></div>
+      <div class="card">
+        <div class="ring" id="Q_ring"></div>
+        <div class="dot"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></div>
+        <div class="st">Generator is<br>ready to run</div>
+        <div class="sub">Guardian 18kW · Model 7228</div>
+        <div class="row"><span>Utility power</span><b style="color:#3f8a35">Normal</b></div>
+        <div class="row"><span>Last self-test</span><b>Mon 9:00 AM · 5 min</b></div>
+        <div class="row"><span>Next self-test</span><b id="Q_next">in 14 days</b></div>
+      </div>
+      <div id="Q_t1" class="tile" style="top:520px"><b>Battery</b>13.1 V · Good</div>
+      <div id="Q_t2" class="tile" style="top:610px"><b>Maintenance</b>Oil change due in 184 h</div>
+    </div>
+    <div class="notch"></div>
+  </div>
+  <div id="Q_a" class="abs" style="left:820px;top:0">
+    <div class="ln" style="left:0;top:330px"><span id="Q_l1" class="h1" style="font-size:118px">It tests itself</span></div>
+    <div class="ln" style="left:0;top:456px"><span id="Q_l2" class="h1" style="font-size:118px">every two weeks.</span></div>
+  </div>
+  <div id="Q_b" class="abs" style="left:820px;top:0">
+    <div class="ln" style="left:0;top:330px"><span id="Q_l3" class="h1" style="font-size:118px">You watch it</span></div>
+    <div class="ln" style="left:0;top:456px"><span id="Q_l4" class="h1" style="font-size:118px">from your <span style="color:#3f8a35">phone.</span></span></div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="OFFER" class="scene">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 45% 60% at 74% 55%,rgba(85,185,72,.16),rgba(0,0,0,0) 70%)"></div>
+  <img id="R_img" src="../assets/img/generac-7228.png" style="position:absolute;left:900px;top:170px;width:1150px;height:818px;opacity:.9;transform-origin:50% 50%">
+  <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(14,18,22,1) 0%,rgba(14,18,22,.95) 40%,rgba(14,18,22,.35) 70%,rgba(14,18,22,0) 100%)"></div>
+  <div id="R_k" class="kicker abs" style="left:96px;top:300px;font-size:28px">In stock now</div>
+  <div id="R_bar" class="bar" style="left:96px;top:350px;width:0;height:8px"></div>
+  <div id="R_p" class="num abs" style="left:92px;top:392px;font-size:260px;white-space:nowrap">$0.00</div>
+  <div id="R_s1" class="h1 abs" style="left:96px;top:660px;font-size:54px;color:#fff">Generac Guardian<sup style="font-size:22px;vertical-align:top;line-height:1;margin-left:4px">®</sup> 18kW &nbsp;·&nbsp; Model 7228</div>
+  <div id="R_s2" class="label abs" style="left:96px;top:740px;font-size:26px">Gardenland Power Equipment · Campbell, CA</div>
+  <div id="R_f" class="fine abs" style="left:96px;top:990px">Price as of October 2026. Installation and battery not included. See store for details.</div>
+</section>
+
+<!-- CLOSE -->
+<section id="CLOSE" class="scene">
+  <div id="C_glow" class="abs" style="inset:0;background:radial-gradient(ellipse 40% 45% at 50% 46%,rgba(85,185,72,.22),rgba(0,0,0,0) 70%);opacity:0"></div>
+  <div id="C_line" class="abs" style="left:960px;top:470px;height:4px;width:0;background:var(--green);transform:translateX(-50%);box-shadow:0 0 24px rgba(85,185,72,.8)"></div>
+  <div id="C_logow" class="abs" style="left:600px;top:380px;width:720px;height:192px;clip-path:inset(50% 0 50% 0)">
+    <img id="C_logo" src="../assets/img/gardenland-logo-white-green.svg" style="width:720px;height:192px;display:block">
+    <div id="C_sweep" class="abs" style="left:0;top:0;width:720px;height:192px;-webkit-mask-image:url(../assets/img/gardenland-logo-white-green.svg);-webkit-mask-size:720px 192px;mask-image:url(../assets/img/gardenland-logo-white-green.svg);mask-size:720px 192px;background:linear-gradient(100deg,rgba(255,255,255,0) 42%,rgba(255,255,255,.9) 50%,rgba(255,255,255,0) 58%);background-size:300% 100%;background-position:120% 0"></div>
+  </div>
+  <div id="C_tag" class="h1 abs" style="left:0;right:0;top:620px;text-align:center;font-size:72px;letter-spacing:.04em">Where the <span style="color:var(--green)">Pros</span> shop</div>
+  <div id="C_cta" class="abs" style="left:0;right:0;top:740px;text-align:center"><span class="pill">gardenland.com &nbsp;·&nbsp; (408) 377-4496</span></div>
+  <div id="C_addr" class="label abs" style="left:0;right:0;top:860px;text-align:center;font-size:20px">196 Curtner Ave · Campbell, CA 95008</div>
+</section>
+
+<div id="wipeline"></div>
+<div id="fade"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const lerp=(a,b,p)=>a+(b-a)*p;
+const eo=p=>1-Math.pow(1-p,3), ei=p=>p*p*p, eio=p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2, eo5=p=>1-Math.pow(1-p,5);
+const back=p=>{const c=1.4;return 1+(c+1)*Math.pow(p-1,3)+c*Math.pow(p-1,2)};
+const ramp=(t,t0,d,fn=eo)=>fn(clamp((t-t0)/d));
+const S=(id,o)=>{const e=$(id);for(const k in o)e.style[k]=o[k]};
+const show=(id,on)=>{$(id).style.display=on?'block':'none'};
+const line=(id,t,t0,d=.7)=>{const p=ramp(t,t0,d,eo5);S(id,{transform:`translateY(${(1-p)*110}%)`,opacity:p>0?1:0})};
+const lineOut=(id,t,t0,d=.35)=>{const p=ramp(t,t0,d,ei);S(id,{transform:`translateY(${-p*110}%)`})};
+const fadeUp=(id,t,t0,d=.6,dy=40)=>{const p=ramp(t,t0,d);S(id,{opacity:p,transform:`translateY(${(1-p)*dy}px)`})};
+const plate=(id,t,t0,t1,s0,s1,x0=0,x1=0,y0=0,y1=0)=>{const p=clamp((t-t0)/(t1-t0));S(id,{transform:`translate(${lerp(x0,x1,p)}px,${lerp(y0,y1,p)}px) scale(${lerp(s0,s1,p)})`})};
+const rain=(idf,idn,t,sf=820,sn=1500,wind=0)=>{S(idf,{transform:`translate(${-t*wind*0.6}px,${(t*sf)%2160}px)`});S(idn,{transform:`translate(${-t*wind}px,${(t*sn)%2160}px)`})};
+const flash=(id,t,times)=>{let o=0;for(const t0 of times){if(t>=t0){o+=0.62*Math.exp(-(t-t0)*16)+0.28*Math.exp(-Math.max(0,t-t0-0.11)*20)*(t>=t0+0.11?1:0)}}S(id,{opacity:clamp(o,0,0.75)})};
+const money=v=>'$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+const T={fact:5.0,dark:12.5,house:17.5,prod:23.5,proof:33.0,offer:39.0,close:45.5,end:51.0};
+const WD=0.46;
+function wipeAt(t,tb){const a=tb-WD/2;return clamp((t-a)/WD)}
+
+function seek(t){
+  for(const id of ['STORM','DARK','HOUSE','PROD','PROOF','OFFER','CLOSE'])show(id,false);
+  show('wipeline',false);
+  // which scene(s)
+  const order=[['STORM',0],['DARK',T.dark],['HOUSE',T.house],['PROD',T.prod],['PROOF',T.proof],['OFFER',T.offer],['CLOSE',T.close]];
+  let cur=0;for(let i=0;i<order.length;i++)if(t>=order[i][1])cur=i;
+  // wipe handling (not for PROD->PROOF which is a slide)
+  let wipeP=null,nextI=null;
+  if(cur<order.length-1){const tb=order[cur+1][1];if(t>=tb-WD/2&&order[cur+1][0]!=='PROOF'){wipeP=wipeAt(t,tb);nextI=cur+1}}
+  if(cur>0&&t<order[cur][1]+WD/2&&order[cur][0]!=='PROOF'){wipeP=wipeAt(t,order[cur][1]);nextI=cur;cur=cur-1}
+  // show
+  const curId=order[cur][0];show(curId,true);$(curId).style.clipPath='none';$(curId).style.zIndex=1;
+  if(wipeP!==null){const nid=order[nextI][0];show(nid,true);const x=eio(wipeP)*2300-200;$(nid).style.clipPath=`polygon(0 0,${x}px 0,${x-180}px 100%,0 100%)`;$(nid).style.zIndex=2;show('wipeline',true);S('wipeline',{left:`${x-95}px`,opacity:wipeP<.04||wipeP>.96?0:1})}
+  for(const [id] of order){if(id!==curId&&(wipeP===null||id!==order[nextI][0]))show(id,false)}
+  // PROD -> PROOF: both are studio; crossfade not needed, PROD elements slide out while PROOF slides in
+  if(t>=T.proof-0.6&&t<T.proof+0.1){show('PROD',true);show('PROOF',t>=T.proof-0.5);$('PROD').style.zIndex=1;$('PROOF').style.zIndex=2;$('PROOF').style.clipPath='none'}
+
+  // ---- STORM (open + fact)
+  if($('STORM').style.display!=='none'){
+    plate('ST_bg',t,0,T.dark,1.06,1.16,0,-40,0,-10);
+    rain('ST_rf','ST_rn',t,820,1500,60);
+    S('ST_ghost',{transform:`translateX(${-t*22}px)`,opacity:t<T.fact?1:1-ramp(t,T.fact,0.5)});
+    flash('ST_flash',t,[0.35,3.7,9.2]);
+    // open
+    const inFact=t>=T.fact;
+    show('O_g',!inFact||t<T.fact+0.4);show('F_g',t>=T.fact+0.3);
+    line('O_l1',t,0.55);line('O_l2',t,0.85);
+    if(inFact){lineOut('O_l1',t,T.fact,0.35);lineOut('O_l2',t,T.fact+0.06,0.35)}
+    // fact
+    const pc=ramp(t,T.fact+0.55,1.3,eo5);const n=Math.round(83*pc);$('F_n').textContent=n;
+    S('F_bar',{width:`${900*0.83*pc}px`});
+    const pop=ramp(t,T.fact+1.7,0.35,back);$('F_g').style.opacity=ramp(t,T.fact+0.3,0.3);
+    $('F_n').parentElement.style.transform=`scale(${1+0.06*(1-Math.min(1,pop))*(t>T.fact+1.7?1:0)})`;
+    line('F_l1',t,T.fact+1.1);line('F_l2',t,T.fact+1.35);fadeUp('F_src',t,T.fact+2.2,0.6,20);
+  }
+  // ---- DARK
+  if($('DARK').style.display!=='none'){
+    plate('D_bg',t,T.dark-0.3,T.house+0.3,1.04,1.14,0,30,0,-20);
+    rain('D_rf','D_rn',t,900,1700,80);
+    flash('D_flash',t,[T.dark+0.25,T.dark+2.9]);
+    line('D_l1',t,T.dark+0.35,0.5);line('D_l2',t,T.dark+1.05,0.5);line('D_l3',t,T.dark+2.0,0.55);
+    S('D_vig',{opacity:0.75*ramp(t,T.dark+3.1,1.0)});
+  }
+  // ---- HOUSE
+  if($('HOUSE').style.display!=='none'){
+    const on=T.house+1.85;  // lights come back on
+    plate('H_dark',t,T.house-0.3,T.prod+0.3,1.02,1.09,0,-30,0,0);plate('H_lit',t,T.house-0.3,T.prod+0.3,1.02,1.09,0,-30,0,0);plate('H_glow',t,T.house-0.3,T.prod+0.3,1.02,1.09,0,-30,0,0);
+    S('H_lit',{opacity:ramp(t,on,0.35)});
+    const g=t<on?0:(t<on+0.28?ramp(t,on,0.28):lerp(1,0.22,ramp(t,on+0.28,1.3)));S('H_glow',{opacity:g});
+    rain('H_rf','H_rn',t,760,1400,50);S('H_rf',{opacity:lerp(0.2,0.08,ramp(t,on,1.5))});S('H_rn',{opacity:lerp(0.22,0.1,ramp(t,on,1.5))});
+    line('H_l1',t,T.house+0.35);line('H_l2',t,T.house+0.75);
+    const p=ramp(t,on+0.45,0.5,back);S('H_l3',{opacity:ramp(t,on+0.45,0.15),transform:`scale(${lerp(0.6,1,p)})`});
+  }
+  // ---- PROD
+  if($('PROD').style.display!=='none'){
+    const t0=T.prod-0.1;const p=ramp(t,t0,1.1,eo5);
+    const out=ramp(t,T.proof-0.55,0.5,ei);
+    S('P_img',{transform:`translateX(${(1-p)*420+out*700}px) rotateY(${(1-p)*-28}deg)`,opacity:p});
+    S('P_floor',{opacity:p*(1-out),transform:`scaleX(${lerp(0.6,1,p)})`});
+    const sw=ramp(t,t0+0.75,1.1,eio);S('P_sweep',{backgroundPosition:`${120-sw*240}% 0`,opacity:p*(1-out),transform:`translateX(${(1-p)*420+out*700}px) rotateY(${(1-p)*-28}deg)`});
+    fadeUp('P_k',t,t0+0.35,0.5,20);line('P_l1',t,t0+0.5);line('P_l2',t,t0+0.7);
+    fadeUp('P_c1',t,t0+2.9,0.5,30);fadeUp('P_c2',t,t0+4.6,0.5,30);fadeUp('P_c3',t,t0+6.6,0.5,30);
+    for(const id of ['P_k','P_c1','P_c2','P_c3']){$(id).style.opacity=Math.min(+$(id).style.opacity,1-out)}
+    if(out>0){lineOut('P_l1',t,T.proof-0.55,0.4);lineOut('P_l2',t,T.proof-0.5,0.4)}
+  }
+  // ---- PROOF
+  if($('PROOF').style.display!=='none'){
+    const t0=T.proof-0.5;const p=ramp(t,t0,0.9,eo5);
+    S('Q_phone',{transform:`translateY(${(1-p)*900}px) rotate(${(1-p)*-4}deg)`});
+    const ring=((t-t0)%1.6)/1.6;S('Q_ring',{transform:`scale(${0.7+ring*0.9})`,opacity:(1-ring)*0.8*(t>t0+0.8?1:0)});
+    fadeUp('Q_t1',t,t0+0.6,0.5,30);fadeUp('Q_t2',t,t0+0.75,0.5,30);
+    const sw=T.proof+2.85;  // switch headline
+    show('Q_a',t<sw+0.4);show('Q_b',t>=sw);
+    line('Q_l1',t,t0+0.5);line('Q_l2',t,t0+0.7);if(t>=sw){lineOut('Q_l1',t,sw,0.35);lineOut('Q_l2',t,sw+0.05,0.35)}
+    line('Q_l3',t,sw+0.25);line('Q_l4',t,sw+0.45);
+  }
+  // ---- OFFER
+  if($('OFFER').style.display!=='none'){
+    const t0=T.offer-0.1;const pi=ramp(t,t0,1.6,eo);
+    S('R_img',{transform:`translateX(${(1-pi)*160}px) scale(${lerp(1.06,1,pi)})`,opacity:0.92*ramp(t,t0,0.6)});
+    fadeUp('R_k',t,t0+0.3,0.5,20);S('R_bar',{width:`${ramp(t,t0+0.4,0.6)*220}px`});
+    const pc=ramp(t,t0+0.6,1.25,eo5);const v=5859.95*pc;$('R_p').textContent=money(pc>=1?5859.95:v);
+    const pop=ramp(t,t0+1.85,0.35,back);S('R_p',{opacity:ramp(t,t0+0.55,0.3),transform:`scale(${t>t0+1.85?lerp(1.035,1,Math.min(1,pop)):1})`,transformOrigin:'0 50%'});
+    fadeUp('R_s1',t,t0+2.2,0.55,30);fadeUp('R_s2',t,t0+2.5,0.55,24);fadeUp('R_f',t,t0+2.8,0.6,10);
+  }
+  // ---- CLOSE
+  if($('CLOSE').style.display!=='none'){
+    const t0=T.close;
+    S('C_line',{width:`${ramp(t,t0+0.1,0.55,eio)*720}px`,opacity:1-ramp(t,t0+0.75,0.5)});
+    const r=ramp(t,t0+0.55,0.7,eo5);S('C_logow',{clipPath:`inset(${(1-r)*50}% 0 ${(1-r)*50}% 0)`});
+    const sw=ramp(t,t0+1.1,1.0,eio);S('C_sweep',{backgroundPosition:`${120-sw*240}% 0`});
+    S('C_glow',{opacity:ramp(t,t0+0.6,1.2)});
+    fadeUp('C_tag',t,t0+1.3,0.6,30);fadeUp('C_cta',t,t0+1.8,0.6,30);fadeUp('C_addr',t,t0+2.2,0.6,16);
+  }
+  // global fade in/out
+  S('fade',{opacity:Math.max(1-ramp(t,0,0.6),ramp(t,T.end-0.8,0.8,ei))});
+}
+window.seek=seek;
+window.ready=(async()=>{await document.fonts.load('900 100px BC');await document.fonts.load('800 100px BC');await document.fonts.load('700 100px BC');await document.fonts.load('600 40px B');await document.fonts.load('700 20px L');await document.fonts.load('400 20px L');await document.fonts.ready;await Promise.all(Array.from(document.images).map(i=>i.complete?Promise.resolve():new Promise(r=>{i.onload=r;i.onerror=r})));seek(0);return true})();
+</script>
+</body>
+</html>
