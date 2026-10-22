@@ -1,0 +1,9 @@
+{
+  "_note": "One entry per target. `file` is your screen recording (relative to this file). `in`/`out` are trim points in seconds; omit `out` to use the rest of the file. A single long recording with 20 in/out pairs is fine.",
+  "targets": [
+    {"n": 1,  "file": "clips/giants-commanders-highlights.mp4", "in": 12.0, "out": 17.5},
+    {"n": 2,  "file": "clips/giants-commanders-highlights.mp4", "in": 31.2, "out": 36.0},
+    {"n": 15, "file": "clips/nabers-17yd-td.mp4", "in": 0.0, "out": 9.0},
+    {"n": 20, "file": "clips/giants-commanders-highlights.mp4", "in": 201.0, "out": 204.5}
+  ]
+}

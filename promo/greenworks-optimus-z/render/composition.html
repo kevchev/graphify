@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OptimusZ 10-Year Anniversary Promo</title>
+<style>
+@font-face{font-family:'BC';font-weight:500;src:url(../assets/fonts/BarlowCondensed-500.woff2) format('woff2')}
+@font-face{font-family:'BC';font-weight:600;src:url(../assets/fonts/BarlowCondensed-600.woff2) format('woff2')}
+@font-face{font-family:'BC';font-weight:700;src:url(../assets/fonts/BarlowCondensed-700.woff2) format('woff2')}
+@font-face{font-family:'BC';font-weight:800;src:url(../assets/fonts/BarlowCondensed-800.woff2) format('woff2')}
+@font-face{font-family:'BC';font-weight:900;src:url(../assets/fonts/BarlowCondensed-900.woff2) format('woff2')}
+@font-face{font-family:'B';font-weight:400;src:url(../assets/fonts/Barlow-400.woff2) format('woff2')}
+@font-face{font-family:'B';font-weight:500;src:url(../assets/fonts/Barlow-500.woff2) format('woff2')}
+@font-face{font-family:'B';font-weight:600;src:url(../assets/fonts/Barlow-600.woff2) format('woff2')}
+@font-face{font-family:'B';font-weight:700;src:url(../assets/fonts/Barlow-700.woff2) format('woff2')}
+:root{
+  --green:#7CB800; --lime:#9FE01A; --dark:#0B0E0C; --ink:#13171A; --stage:#F2F3F1; --muted:#5B6168;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#000}
+body{font-family:'B',sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;background:#000}
+.scene{position:absolute;inset:0;display:none;overflow:hidden}
+.scene.dark{background:var(--dark)}
+.scene.light{background:radial-gradient(ellipse 70% 60% at 62% 55%, #ffffff 0%, #f4f5f3 55%, #e6e8e4 100%)}
+.abs{position:absolute}
+.cover{position:absolute;left:0;top:0;transform-origin:0 0}
+.kicker{font-family:'B';font-weight:600;letter-spacing:.28em;text-transform:uppercase;font-size:24px;color:var(--green)}
+.h1{font-family:'BC';font-weight:900;text-transform:uppercase;line-height:.9;letter-spacing:-.005em}
+.h2{font-family:'BC';font-weight:800;text-transform:uppercase;line-height:.95}
+.body{font-family:'B';font-weight:500;line-height:1.3}
+.light .kicker{color:#4E7A00}
+.light .h1,.light .h2{color:var(--ink)}
+.light .body{color:#3A4047}
+.num{font-family:'BC';font-weight:900;line-height:.85;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.label{font-family:'B';font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:26px;color:#C9D0D6}
+.bar{position:absolute;left:0;top:0;width:10px;background:var(--green);border-radius:2px}
+.floor{position:absolute;border-radius:50%;background:radial-gradient(ellipse at center, rgba(0,0,0,.26) 0%, rgba(0,0,0,.12) 40%, rgba(0,0,0,0) 72%)}
+.prod{position:absolute;object-fit:contain}
+.check{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:var(--green);margin-right:28px;flex:none}
+.check svg{width:34px;height:34px}
+.row{display:flex;align-items:center}
+.pill{display:inline-block;padding:22px 48px;border-radius:999px;background:var(--green);color:#0B0E0C;font-family:'BC';font-weight:800;font-size:44px;letter-spacing:.04em;text-transform:uppercase}
+.fine{font-family:'B';font-weight:500;font-size:19px;line-height:1.35;color:#8B949C}
+#wipe{position:absolute;top:-10%;height:120%;width:70%;left:0;background:var(--green);transform:skewX(-14deg);display:none}
+#wipe2{position:absolute;top:-10%;height:120%;width:70%;left:0;background:#0B0E0C;transform:skewX(-14deg);display:none}
+#fade{position:absolute;inset:0;background:#000;pointer-events:none}
+.strike{position:absolute;left:0;top:50%;height:10px;background:#D23B2F;border-radius:5px;transform:translateY(-50%) rotate(-6deg);transform-origin:0 50%}
+.badge{display:inline-block;background:var(--ink);color:#fff;font-family:'BC';font-weight:800;font-size:46px;letter-spacing:.06em;padding:14px 34px;border-radius:12px;text-transform:uppercase}
+.badge b{color:var(--lime)}
+.gbar{position:absolute;height:74px;border-radius:8px}
+.gbar.e{background:linear-gradient(90deg,#7CB800,#A6E52A)}
+.gbar.g{background:linear-gradient(90deg,#3C434A,#596168)}
+.vline{position:absolute;width:3px;background:rgba(255,255,255,.14)}
+</style>
+</head>
+<body>
+<div id="stage">
+
+<!-- A · OPEN -->
+<section id="A" class="scene dark">
+  <img id="A_bg" class="cover" src="../assets/img/banner_10years_clean.png" width="2560" height="1271">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 80% 70% at 50% 45%, rgba(0,0,0,0) 40%, rgba(0,0,0,.55) 100%)"></div>
+  <div class="abs" style="left:0;right:0;bottom:0;height:320px;background:linear-gradient(0deg,#0B0E0C 0px,#0B0E0C 150px,rgba(11,14,12,.88) 195px,rgba(11,14,12,0) 320px)"></div>
+  <div id="A_band" class="abs" style="left:0;right:0;top:560px;height:300px;background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(0,0,0,.78) 28%,rgba(0,0,0,.78) 72%,rgba(0,0,0,0) 100%)"></div>
+  <div id="A_k" class="kicker abs" style="left:0;right:0;top:612px;text-align:center">Greenworks Commercial &nbsp;·&nbsp; 10th Anniversary</div>
+  <div id="A_h" class="h1 abs" style="left:0;right:0;top:650px;text-align:center;font-size:124px">A decade of replacing gas.</div>
+  <div id="A_sweep" class="abs" style="top:-20%;height:140%;width:260px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.22),rgba(255,255,255,0));transform:skewX(-18deg)"></div>
+</section>
+
+<!-- B · HERO -->
+<section id="B" class="scene light">
+  <div id="B_floor" class="floor" style="left:900px;top:820px;width:980px;height:150px"></div>
+  <img id="B_img" class="prod" src="../assets/img/oz960r_hero_cutout_cut.png" onerror="this.onerror=null;this.src='../assets/img/oz960r_hero_cutout.png'" style="left:930px;top:130px;width:950px;height:770px">
+  <div id="B_k" class="kicker abs" style="left:150px;top:330px">Series 9 &nbsp;·&nbsp; 82V OPTIMUS platform</div>
+  <div id="B_h" class="h1 abs" style="left:142px;top:372px;font-size:212px">Optimus<span style="color:var(--green)">Z</span></div>
+  <div id="B_s" class="body abs" style="left:150px;top:590px;font-size:46px;width:760px;line-height:1.2">The commercial zero-turn<br>that replaced gas.</div>
+  <div id="B_bar" class="bar" style="left:150px;top:730px;height:8px;width:0"></div>
+</section>
+
+<!-- C · POWER -->
+<section id="C" class="scene dark">
+  <img id="C_bg" class="cover" src="../assets/img/lifestyle_grass_pov.png" width="2560" height="1430">
+  <div class="abs" style="inset:0;background:linear-gradient(90deg,rgba(6,8,7,.92) 0%,rgba(6,8,7,.78) 42%,rgba(6,8,7,.15) 100%)"></div>
+  <div class="abs" style="inset:0;background:linear-gradient(0deg,rgba(6,8,7,.6) 0%,rgba(6,8,7,0) 40%)"></div>
+  <div id="C_k" class="kicker abs" style="left:150px;top:118px">OptimusZ Series 9 &nbsp;·&nbsp; Performance</div>
+  <div id="C_r1" class="abs" style="left:150px;top:190px">
+    <div class="bar" style="height:150px;left:-34px;top:8px"></div>
+    <div class="num" style="font-size:178px"><span id="C_n1">65</span> <span style="font-size:96px;color:var(--lime)">HP</span></div>
+    <div class="label" style="margin-top:14px">Equivalent power · instant torque</div>
+  </div>
+  <div id="C_r2" class="abs" style="left:150px;top:470px">
+    <div class="bar" style="height:150px;left:-34px;top:8px"></div>
+    <div class="num" style="font-size:178px"><span id="C_n2">19,000</span> <span style="font-size:96px;color:var(--lime)">FPM</span></div>
+    <div class="label" style="margin-top:14px">Constant blade-tip speed · OptimusCut™</div>
+  </div>
+  <div id="C_r3" class="abs" style="left:150px;top:750px">
+    <div class="bar" style="height:150px;left:-34px;top:8px"></div>
+    <div class="num" style="font-size:178px"><span id="C_n3">16</span> <span style="font-size:96px;color:var(--lime)">MPH</span></div>
+    <div class="label" style="margin-top:14px">Forward ground speed · 12 mph reverse</div>
+  </div>
+</section>
+
+<!-- D · RANGE -->
+<section id="D" class="scene dark">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 50% 60% at 75% 50%, rgba(124,184,0,.14), rgba(0,0,0,0) 70%)"></div>
+  <div id="D_card" class="abs" style="left:1090px;top:110px;width:700px;height:860px;border-radius:30px;border:4px solid var(--green);padding:14px;background:#0B0E0C">
+    <div style="width:100%;height:100%;border-radius:18px;overflow:hidden"><img id="D_img" src="../assets/img/lifestyle_operator_sr.png" onerror="this.onerror=null;this.src='../assets/img/lifestyle_operator.png'" style="width:100%;height:100%;object-fit:cover;object-position:50% 0%"></div>
+  </div>
+  <div id="D_k" class="kicker abs" style="left:150px;top:150px">All-day runtime</div>
+  <div id="D_r1" class="abs" style="left:150px;top:230px">
+    <div class="num" style="font-size:300px">21<span style="font-size:110px;color:var(--lime);margin-left:18px">ACRES</span></div>
+  </div>
+  <div id="D_r2" class="abs" style="left:150px;top:530px">
+    <div class="num" style="font-size:300px">8<span style="font-size:110px;color:var(--lime);margin-left:18px">HOURS</span></div>
+  </div>
+  <div id="D_s" class="abs" style="left:150px;top:840px">
+    <div class="label" style="font-size:30px;color:#fff">On a single charge</div>
+    <div class="body" style="font-size:30px;color:#B6BEC5;margin-top:10px">24 kWh LFP battery · recharge in as little as 5 hours*</div>
+  </div>
+  <div class="fine abs" style="left:150px;top:1016px;font-size:17px">*With Optimus super charger. Coverage and runtime vary with conditions and deck size.</div>
+</section>
+
+<!-- E · CLEAN -->
+<section id="E" class="scene light">
+  <div id="E_floor" class="floor" style="left:1010px;top:830px;width:900px;height:140px"></div>
+  <img id="E_img" class="prod" src="../assets/img/os960_hero_cutout_cut.png" onerror="this.onerror=null;this.src='../assets/img/os960_hero_cutout.png'" style="left:1180px;top:170px;width:680px;height:760px">
+  <div id="E_k" class="kicker abs" style="left:150px;top:140px">Why electric</div>
+  <div id="E_l1" class="row abs" style="left:150px;top:220px"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0B0E0C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></span><span class="h2" style="font-size:96px">No fuel.</span></div>
+  <div id="E_l2" class="row abs" style="left:150px;top:360px"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0B0E0C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></span><span class="h2" style="font-size:96px">No fumes.</span></div>
+  <div id="E_l3" class="row abs" style="left:150px;top:500px"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#0B0E0C" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5l5 5L20 7"/></svg></span><span class="h2" style="font-size:78px">Almost no maintenance.</span></div>
+  <div id="E_w" class="abs" style="left:150px;top:700px">
+    <div class="badge"><b>5-year</b> / <b>2,000-hour</b> commercial warranty</div>
+    <div class="body" style="font-size:28px;margin-top:22px;color:#3A4047">Field-tested to 2,000 hours · 80% fewer moving parts than gas</div>
+  </div>
+</section>
+
+<!-- F · LINEUP -->
+<section id="F" class="scene light">
+  <div id="F_k" class="kicker abs" style="left:0;right:0;top:110px;text-align:center">Ride-on &nbsp;·&nbsp; Stand-on &nbsp;·&nbsp; 48" to 72" decks</div>
+  <div id="F_h" class="h1 abs" style="left:0;right:0;top:150px;text-align:center;font-size:128px">One platform. Every crew.</div>
+  <div id="F_c1" class="abs" style="left:90px;top:360px;width:420px;text-align:center">
+    <div class="floor" style="left:40px;top:470px;width:340px;height:70px"></div>
+    <img class="prod" src="../assets/img/oz948_card_cut.png" onerror="this.onerror=null;this.src='../assets/img/oz948_card.png'" style="left:20px;top:100px;width:380px;height:400px">
+    <div class="h2 abs" style="left:0;right:0;top:560px;font-size:64px">48"</div>
+    <div class="label abs" style="left:0;right:0;top:632px;font-size:22px;color:#4E7A00">Ride-on</div>
+  </div>
+  <div id="F_c2" class="abs" style="left:530px;top:360px;width:420px;text-align:center">
+    <div class="floor" style="left:40px;top:470px;width:340px;height:70px"></div>
+    <img class="prod" src="../assets/img/os952_card_cut.png" onerror="this.onerror=null;this.src='../assets/img/os952_card.png'" style="left:20px;top:100px;width:380px;height:400px">
+    <div class="h2 abs" style="left:0;right:0;top:560px;font-size:64px">52"</div>
+    <div class="label abs" style="left:0;right:0;top:632px;font-size:22px;color:#4E7A00">Stand-on</div>
+  </div>
+  <div id="F_c3" class="abs" style="left:970px;top:360px;width:420px;text-align:center">
+    <div class="floor" style="left:30px;top:470px;width:360px;height:70px"></div>
+    <img class="prod" src="../assets/img/oz960r_hero_cutout_cut.png" onerror="this.onerror=null;this.src='../assets/img/oz960r_hero_cutout.png'" style="left:10px;top:90px;width:400px;height:420px">
+    <div class="h2 abs" style="left:0;right:0;top:560px;font-size:64px">60"</div>
+    <div class="label abs" style="left:0;right:0;top:632px;font-size:22px;color:#4E7A00">Ride-on · Series 9</div>
+  </div>
+  <div id="F_c4" class="abs" style="left:1410px;top:360px;width:420px;text-align:center">
+    <div class="floor" style="left:30px;top:470px;width:360px;height:70px"></div>
+    <img class="prod" src="../assets/img/oz972r_hero_cutout_cut.png" onerror="this.onerror=null;this.src='../assets/img/oz972r_hero_cutout.png'" style="left:10px;top:80px;width:400px;height:430px">
+    <div class="h2 abs" style="left:0;right:0;top:560px;font-size:64px">72"</div>
+    <div class="label abs" style="left:0;right:0;top:632px;font-size:22px;color:#4E7A00">Ride-on · 36 kWh</div>
+  </div>
+</section>
+
+<!-- G · COST -->
+<section id="G" class="scene dark">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%, rgba(124,184,0,.16), rgba(0,0,0,0) 70%)"></div>
+  <div id="G_k" class="kicker abs" style="left:150px;top:110px">Estimated operating cost · 2,000 hours · 60" commercial zero-turn</div>
+  <div id="G_h" class="h1 abs" style="left:146px;top:150px;font-size:126px">The electric advantage adds up.</div>
+  <div id="G_grp1" class="abs" style="left:150px;top:400px;width:800px">
+    <div class="label" style="font-size:28px;color:#fff;margin-bottom:26px">Energy</div>
+    <div class="abs" style="left:0;top:70px;width:800px;height:74px"><div id="G_b1" class="gbar e" style="width:0"></div><div id="G_t1" class="num abs" style="left:0;top:4px;font-size:64px;color:var(--lime);white-space:nowrap"></div></div>
+    <div class="label abs" style="left:0;top:154px;font-size:20px">OptimusZ · electricity</div>
+    <div class="abs" style="left:0;top:214px;width:800px;height:74px"><div id="G_b2" class="gbar g" style="width:0"></div><div id="G_t2" class="num abs" style="left:0;top:4px;font-size:64px;color:#fff;white-space:nowrap"></div></div>
+    <div class="label abs" style="left:0;top:298px;font-size:20px">Comparable gas zero-turn · fuel</div>
+  </div>
+  <div id="G_grp2" class="abs" style="left:1040px;top:400px;width:800px">
+    <div class="label" style="font-size:28px;color:#fff;margin-bottom:26px">Maintenance</div>
+    <div class="abs" style="left:0;top:70px;width:800px;height:74px"><div id="G_b3" class="gbar e" style="width:0"></div><div id="G_t3" class="num abs" style="left:0;top:4px;font-size:64px;color:var(--lime);white-space:nowrap"></div></div>
+    <div class="label abs" style="left:0;top:154px;font-size:20px">OptimusZ</div>
+    <div class="abs" style="left:0;top:214px;width:800px;height:74px"><div id="G_b4" class="gbar g" style="width:0"></div><div id="G_t4" class="num abs" style="left:0;top:4px;font-size:64px;color:#fff;white-space:nowrap"></div></div>
+    <div class="label abs" style="left:0;top:298px;font-size:20px">Comparable gas zero-turn</div>
+  </div>
+  <div id="G_sum" class="abs" style="left:150px;top:850px"><span class="badge"><b>$16,000+</b> lower total cost at 2,000 hours</span></div>
+  <div id="G_fn" class="fine abs" style="left:150px;right:150px;top:980px;font-size:17px">Estimates: 3 kWh/hr at $0.14/kWh vs. 1.5 gal/hr at $4.04/gal (U.S. Energy Information Administration pricing); maintenance $250 vs. $5,000. Source: Greenworks Commercial 10-year anniversary comparison, Pro Tool Reviews, May 2026. Actual costs vary.</div>
+</section>
+
+<!-- H · OFFER -->
+<section id="H" class="scene dark">
+  <img id="H_bg" class="cover" src="../assets/img/banner_10years_clean.png" width="2560" height="1271">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 60% 55% at 50% 52%, rgba(0,0,0,.82) 0%, rgba(0,0,0,.55) 55%, rgba(0,0,0,.25) 100%)"></div>
+  <div id="H_k" class="kicker abs" style="left:0;right:0;top:250px;text-align:center;font-size:30px">Celebrating 10 years</div>
+  <div id="H_up" class="h2 abs" style="left:0;right:0;top:310px;text-align:center;font-size:72px;color:#fff">Up to</div>
+  <div id="H_n" class="num abs" style="left:0;right:0;top:372px;text-align:center;font-size:360px;color:var(--lime)">$10,000</div>
+  <div id="H_h" class="h1 abs" style="left:0;right:0;top:700px;text-align:center;font-size:96px">Instant anniversary savings</div>
+  <div id="H_s" class="body abs" style="left:0;right:0;top:810px;text-align:center;font-size:34px;color:#D5DBE0">On select 48", 52", 60" &amp; 72" OptimusZ ride-on and stand-on zero-turn mowers</div>
+</section>
+
+<!-- I · PRICE -->
+<section id="I" class="scene light">
+  <div id="I_floor" class="floor" style="left:60px;top:830px;width:980px;height:150px"></div>
+  <img id="I_img" class="prod" src="../assets/img/oz960r_hero_cutout_cut.png" onerror="this.onerror=null;this.src='../assets/img/oz960r_hero_cutout.png'" style="left:40px;top:130px;width:1000px;height:770px">
+  <div id="I_k" class="kicker abs" style="left:1080px;top:230px">OptimusZ Series 9 &nbsp;·&nbsp; 60" ride-on &nbsp;·&nbsp; 24 kWh</div>
+  <div id="I_old" class="abs" style="left:1080px;top:290px">
+    <div class="label" style="font-size:22px;color:#7A838B;margin-bottom:6px">Regular price</div>
+    <div class="num" style="font-size:132px;color:#8E979F;position:relative;display:inline-block"><span>$28,999</span><div id="I_strike" class="strike" style="width:0"></div></div>
+  </div>
+  <div id="I_new" class="abs" style="left:1080px;top:500px;transform-origin:0 50%">
+    <div class="label" style="font-size:22px;color:#4E7A00;margin-bottom:6px">Anniversary price</div>
+    <div class="num" style="font-size:230px;color:var(--ink)">$19,999</div>
+  </div>
+  <div id="I_badge" class="abs" style="left:1080px;top:790px"><span class="badge" style="background:var(--green);color:#0B0E0C"><b style="color:#0B0E0C">$9,000</b> instant savings</span></div>
+  <div class="fine abs" style="left:1080px;top:900px;width:760px;font-size:17px;color:#6B737A">Example pricing as featured in the Greenworks Commercial 10-year anniversary offer. Savings vary by model. See participating dealer for current pricing and eligible models.</div>
+</section>
+
+<!-- J · CTA -->
+<section id="J" class="scene dark">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 50% 60% at 50% 50%, rgba(124,184,0,.22), rgba(0,0,0,0) 70%)"></div>
+  <div id="J_h" class="h1 abs" style="left:0;right:0;top:300px;text-align:center;font-size:250px">Limited time.</div>
+  <div id="J_s" class="body abs" style="left:0;right:0;top:560px;text-align:center;font-size:40px;color:#D5DBE0">Instant savings applied right at your Greenworks Commercial dealer.</div>
+  <div id="J_p" class="abs" style="left:0;right:0;top:680px;text-align:center"><span class="pill">Find a dealer &nbsp;→&nbsp; greenworkscommercial.com</span></div>
+</section>
+
+<!-- K · CLOSE -->
+<section id="K" class="scene dark">
+  <img id="K_bg" class="cover" src="../assets/img/banner_10years_clean.png" width="2560" height="1271" style="opacity:.28">
+  <div class="abs" style="inset:0;background:radial-gradient(ellipse 70% 70% at 50% 40%, rgba(11,14,12,.55) 0%, rgba(11,14,12,.95) 100%)"></div>
+  <img id="K_logo" class="abs" src="../assets/img/logo_greenworks_commercial_3x.png" style="left:620px;top:250px;width:680px">
+  <div id="K_h" class="h1 abs" style="left:0;right:0;top:520px;text-align:center;font-size:84px">10 years of charging the industry.</div>
+  <div id="K_u" class="abs" style="left:0;right:0;top:660px;text-align:center;font-family:'BC';font-weight:700;font-size:48px;letter-spacing:.06em;color:var(--lime)">greenworkscommercial.com</div>
+  <div id="K_f" class="fine abs" style="left:200px;right:200px;top:930px;text-align:center;font-size:18px">Up to $10,000 instant savings on select OptimusZ 48"–72" ride-on and stand-on zero-turn mowers for a limited time. Pricing for all states except Hawaii and Alaska. See participating Greenworks Commercial dealer for details. OPTIMUS, OptimusZ and Greenworks are trademarks of Greenworks Tools.</div>
+</section>
+
+<div id="wipe2"></div>
+<div id="wipe"></div>
+<div id="fade"></div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const clamp=(v,a,b)=>Math.min(b,Math.max(a,v));
+const lerp=(a,b,t)=>a+(b-a)*t;
+const eo3=t=>1-Math.pow(1-t,3);
+const eo5=t=>1-Math.pow(1-t,5);
+const eio=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const eoBack=t=>{const c=1.70158,c3=c+1;return 1+c3*Math.pow(t-1,3)+c*Math.pow(t-1,2)};
+const prog=(t,t0,d)=>clamp((t-t0)/d,0,1);
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+function fadeUp(el,t,t0,d=0.6,dy=40,ease=eo3){const p=ease(prog(t,t0,d));el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`;}
+function fadeX(el,t,t0,d=0.6,dx=80,ease=eo3){const p=ease(prog(t,t0,d));el.style.opacity=p;el.style.transform=`translateX(${(1-p)*dx}px)`;}
+function pop(el,t,t0,d=0.7){const p=prog(t,t0,d);el.style.opacity=Math.min(1,p*3);el.style.transform=`scale(${lerp(1.35,1,eoBack(p))})`;}
+function cover(img,W,H,scale,ox,oy,originX=0.5,originY=0.5){ // scale relative to cover-fit, ox/oy pan in px
+  const base=Math.max(1920/W,1080/H); const s=base*scale; const w=W*s,h=H*s;
+  const x=(1920-w)*originX+ox, y=(1080-h)*originY+oy;
+  img.style.transform=`translate(${x}px,${y}px) scale(${s})`;
+}
+
+const T_A=0, T_B=6.6, T_C=10.9, T_D=21.4, T_E=26.8, T_F=35.0, T_G=42.0, T_H=50.0, T_I=58.8, T_J=67.3, T_K=71.8, T_END=81.0;
+const scenes=[
+ {id:'A',start:T_A,end:T_B,render(t){
+   const s=lerp(1.24,1.16,eo3(prog(t,0,6.6)));
+   cover($('A_bg'),2560,1271,s,0,lerp(0,-10,prog(t,0,6.6)),0.5,0);
+   const kp=prog(t,0.7,0.6); $('A_band').style.opacity=eo3(kp);
+   fadeUp($('A_k'),t,0.75,0.6,20); fadeUp($('A_h'),t,0.95,0.8,36);
+   const sp=prog(t,0.2,1.6); $('A_sweep').style.left=`${lerp(-400,2200,eio(sp))}px`; $('A_sweep').style.opacity=sp>0&&sp<1?1:0;
+ }},
+ {id:'B',start:T_B,end:T_C,render(t){
+   const p=eo5(prog(t,0.05,0.9)); const img=$('B_img'); img.style.opacity=p; img.style.transform=`translateX(${(1-p)*140}px) scale(${lerp(0.94,1,p)+0.012*prog(t,0.9,3.4)})`; img.style.transformOrigin='50% 90%';
+   $('B_floor').style.opacity=p;
+   fadeUp($('B_k'),t,0.35,0.6,20); fadeUp($('B_h'),t,0.45,0.8,50); fadeUp($('B_s'),t,0.95,0.7,30);
+   $('B_bar').style.width=`${lerp(0,260,eo3(prog(t,1.2,0.8)))}px`;
+ }},
+ {id:'C',start:T_C,end:T_D,render(t){
+   const p=prog(t,0,10.5); cover($('C_bg'),2560,1430,lerp(1.0,1.14,p),lerp(0,-120,p),lerp(0,-40,p),0.5,0.4);
+   fadeUp($('C_k'),t,0.1,0.5,16);
+   const rows=[['C_r1','C_n1',65,0.5],['C_r2','C_n2',19000,3.7],['C_r3','C_n3',16,7.3]];
+   for(const [r,n,v,t0] of rows){fadeUp($(r),t,t0,0.7,40); $(n).textContent=fmt(v*eo5(prog(t,t0,1.2)));}
+ }},
+ {id:'D',start:T_D,end:T_E,render(t){
+   const p=prog(t,0,5.4); const img=$('D_img'); img.style.transform=`scale(${lerp(1.0,1.08,p)})`; img.style.transformOrigin='50% 30%'; fadeX($('D_card'),t,0.1,0.8,120,eo5);
+   fadeUp($('D_k'),t,0.2,0.5,16); fadeUp($('D_r1'),t,0.5,0.7,50); fadeUp($('D_r2'),t,1.9,0.7,50); fadeUp($('D_s'),t,2.9,0.6,30);
+ }},
+ {id:'E',start:T_E,end:T_F,render(t){
+   const p=eo5(prog(t,0.05,0.9)); const img=$('E_img'); img.style.opacity=p; img.style.transform=`translateX(${(1-p)*120}px) scale(${lerp(0.95,1,p)+0.01*prog(t,1,6)})`; img.style.transformOrigin='50% 90%'; $('E_floor').style.opacity=p;
+   fadeUp($('E_k'),t,0.2,0.5,16); fadeUp($('E_l1'),t,0.45,0.6,36); fadeUp($('E_l2'),t,1.35,0.6,36); fadeUp($('E_l3'),t,2.5,0.6,36); fadeUp($('E_w'),t,4.5,0.7,36);
+ }},
+ {id:'F',start:T_F,end:T_G,render(t){
+   fadeUp($('F_k'),t,0.1,0.5,16); fadeUp($('F_h'),t,0.25,0.7,40);
+   const cs=['F_c1','F_c2','F_c3','F_c4']; cs.forEach((c,i)=>{fadeUp($(c),t,0.9+i*0.28,0.7,70,eo5)});
+ }},
+ {id:'G',start:T_G,end:T_H,render(t){
+   fadeUp($('G_k'),t,0.1,0.5,16); fadeUp($('G_h'),t,0.25,0.7,40); fadeUp($('G_grp1'),t,1.2,0.6,30); fadeUp($('G_grp2'),t,1.5,0.6,30);
+   const maxW=540; const bars=[['G_b1','G_t1',840,1.5],['G_b2','G_t2',12120,2.1],['G_b3','G_t3',250,2.4],['G_b4','G_t4',5000,3.0]];
+   for(const [b,l,v,t0] of bars){const p=eo5(prog(t,t0,1.4)); const w=Math.max(10,maxW*v/12120)*p; $(b).style.width=`${w}px`; $(l).textContent='$'+fmt(v*p); $(l).style.left=`${w+22}px`; $(l).style.opacity=p>0?1:0;}
+   fadeUp($('G_sum'),t,4.8,0.7,30); fadeUp($('G_fn'),t,5.2,0.6,10);
+ }},
+ {id:'H',start:T_H,end:T_I,render(t){
+   const p=prog(t,0,8.8); cover($('H_bg'),2560,1271,lerp(1.44,1.52,p),0,lerp(0,-10,p),0.5,0);
+   fadeUp($('H_k'),t,0.2,0.5,16); fadeUp($('H_up'),t,0.5,0.5,20);
+   const np=prog(t,0.7,1.6); const el=$('H_n'); el.style.opacity=Math.min(1,np*4); el.style.transform=`scale(${lerp(0.8,1,eoBack(np))})`; el.textContent='$'+fmt(10000*eo5(np));
+   fadeUp($('H_h'),t,2.2,0.7,36); fadeUp($('H_s'),t,2.8,0.6,24);
+ }},
+ {id:'I',start:T_I,end:T_J,render(t){
+   const p=eo5(prog(t,0.05,0.9)); const img=$('I_img'); img.style.opacity=p; img.style.transform=`translateX(${(1-p)*-140}px) scale(${lerp(0.95,1,p)+0.01*prog(t,1,7)})`; img.style.transformOrigin='50% 90%'; $('I_floor').style.opacity=p;
+   fadeUp($('I_k'),t,0.3,0.5,16); fadeUp($('I_old'),t,1.5,0.6,30);
+   $('I_strike').style.width=`${lerp(0,104,eo3(prog(t,3.4,0.5)))}%`;
+   pop($('I_new'),t,4.6,0.8); fadeUp($('I_badge'),t,5.6,0.6,30);
+ }},
+ {id:'J',start:T_J,end:T_K,render(t){
+   pop($('J_h'),t,0.15,0.8); fadeUp($('J_s'),t,0.9,0.6,30); fadeUp($('J_p'),t,1.6,0.7,40);
+ }},
+ {id:'K',start:T_K,end:T_END,render(t){
+   const p=prog(t,0,9.2); cover($('K_bg'),2560,1271,lerp(1.44,1.52,p),0,0,0.5,0);
+   fadeUp($('K_logo'),t,0.2,0.9,30); fadeUp($('K_h'),t,1.0,0.8,36); fadeUp($('K_u'),t,1.8,0.7,24); fadeUp($('K_f'),t,2.6,0.8,10);
+ }},
+];
+const boundaries=[T_B,T_C,T_D,T_E,T_F,T_G,T_H,T_I,T_J,T_K];
+const WIPE_D=0.56;
+window.seek=function(T){
+  for(const s of scenes){const el=$(s.id); const vis=T>=s.start&&T<s.end; el.style.display=vis?'block':'none'; if(vis) s.render(T-s.start);}
+  // wipe
+  let shown=false;
+  for(const b of boundaries){const u=(T-(b-WIPE_D/2))/WIPE_D; if(u>=0&&u<=1){
+    const x1=lerp(-1500,2300,eio(u)); const x2=lerp(-1500,2300,eio(clamp(u-0.09,0,1)));
+    $('wipe').style.display='block'; $('wipe').style.left=`${x1}px`;
+    $('wipe2').style.display='block'; $('wipe2').style.left=`${x2}px`; shown=true;}}
+  if(!shown){$('wipe').style.display='none';$('wipe2').style.display='none';}
+  // global fade
+  let f=0; if(T<0.7) f=1-eo3(T/0.7); if(T>T_END-0.9) f=prog(T,T_END-0.9,0.9);
+  $('fade').style.opacity=f;
+};
+window.ready=(async()=>{
+  const faces=[]; document.fonts.forEach(f=>faces.push(f.load()));
+  await Promise.all(faces);
+  await Promise.all(Array.from(document.images).map(i=>i.complete?null:new Promise(r=>{i.onload=r;i.onerror=r;})));
+  // wait for fallback swaps (onerror handlers) too
+  await new Promise(r=>setTimeout(r,300));
+  await Promise.all(Array.from(document.images).map(i=>i.complete?null:new Promise(r=>{i.onload=r;i.onerror=r;})));
+  return true;
+})();
+window.seek(0);
+</script>
+</body>
+</html>
